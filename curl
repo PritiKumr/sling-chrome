@@ -1,0 +1,4 @@
+curl --header "Authorization: key=AAAA6f9hv5s:APA91bFw9dGJJz-uuaNOa5d0Txfj4shFXF6q54NqLYDVnelBWQcXoHOJaz07RlJUoRKeCGkiFLaqV4cA9La8f_hidFKXAl4mckATQrvSpkt1Iw73vSeDusJVCXJx8dDyeMPIrkCn5b4g" \
+       --header Content-Type:"application/json" \
+       https://fcm.googleapis.com/fcm/send \
+       -d "{\"registration_ids\":[\"APA91bFYnYKKOUnZTTDVN_Pt0LIDNCdlEIiXELWcvfHReYzZhUPS2_wtcjHEnWoXCh0mSlX8QORVWl4rTNL3YmCTgmn-pUNqkmlaqXefdoI7_oUj5zsAr0ufHU6xn0yjRu4h9wCkTd-0aw68ziAFFaC6joM_DL846A\"]}"
