@@ -23,5 +23,7 @@
     "tabs",
     "storage",
     "gcm"
-  ]
+  ],
+  "content_security_policy": 
+    "script-src 'self' https://www.gstatic.com/firebasejs/3.8.0/firebase.js https://apis.google.com https://*.firebaseio.com; object-src 'self';"
 }

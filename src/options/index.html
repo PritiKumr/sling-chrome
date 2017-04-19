@@ -3,21 +3,56 @@
 <head>
 	<title>Setup Sling</title>
   <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+  <script src="/js/firebase_auth.js"></script>
+
+  <style type="text/css">
+    #current-user {
+      display: none;
+    }
+    
+    #google-signin {
+      display: none;
+      background: white;
+      color: #444;
+      width: 190px;
+      border-radius: 5px;
+      border: thin solid #888;
+      box-shadow: 1px 1px 1px grey;
+      white-space: nowrap;
+    }
+    #google-signin:hover {
+      cursor: pointer;
+    }
+    span.label {
+      font-family: serif;
+      font-weight: normal;
+    }
+    span.icon {
+      background: url('/icons/g-normal.png') transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+    }
+    span.buttonText {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 14px;
+      font-weight: bold;
+      /* Use the Roboto font that is loaded in the <head> */
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
 </head>
 <body>
+  <div id="google-signin">
+    <span class="icon"></span>
+    <span class="buttonText">Sign in with Google</span>
+  </div>
 
-
-  <script>
-    var config = {
-      apiKey: "AIzaSyB8b0KoIr3kDuZpLmJrH-lk8PGLdn1W_VE",
-      authDomain: "sling-3ccb3.firebaseapp.com",
-      databaseURL: "https://sling-3ccb3.firebaseio.com",
-      projectId: "sling-3ccb3",
-      storageBucket: "sling-3ccb3.appspot.com",
-      messagingSenderId: "1005011976091"
-    };
-    firebase.initializeApp(config);
-  </script>
-
+  <div id="current-user">
+    <span class="user-name"></span> / 
+    <span class="user-email"></span>
+  </div>
 </body>
 </html>
