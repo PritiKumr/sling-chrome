@@ -12,7 +12,7 @@ function registerCallback(registrationId) {
     // next time when the app starts up.
     if (succeed){
       chrome.storage.local.set({registered: true});
-      chrome.storage.local.set({registrationId: registrationId});
+      chrome.storage.local.set({notificationToken: registrationId});
     }
   });
 }
@@ -38,8 +38,8 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.gcm.onMessage.addListener(function (message) {
   var opt = {
     type: "basic",
-    title: message.data['gcm.notification.title'], 
-    message: message.data['gcm.notification.title'],
+    title: "New URL Received", 
+    message: message.data['gcm.notification.url'],
     iconUrl: "icons/icon128.png"
   };
   

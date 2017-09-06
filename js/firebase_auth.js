@@ -42,15 +42,12 @@ var updateNotificationTokensForUser = function (user) {
     if (!result["registered"])
       return;
 
-    chrome.storage.local.get("registrationId", function(registrationId) {
+    chrome.storage.local.get("notificationToken", function(notificationToken) {
       chrome.instanceID.getID(function (instanceId) {
         firebase
           .database()
-          .ref("users/" + 
-                user.uid + 
-               "/readerDevices/" + 
-               instanceId)
-          .set({notificationToken: registrationId});
+          .ref("users/" + user.uid + "/readerDevices/" + instanceId)
+          .set(notificationToken);
       })
     });
   });
