@@ -47,7 +47,8 @@ chrome.gcm.onMessage.addListener(function (message) {
   
   chrome.notifications.create(null, opt);
 
-  chrome.notifications.onClicked.addListener(function(){
+  chrome.notifications.onClicked.addListener(function(notificationId){
     chrome.tabs.create({ url: opt.message });
+    chrome.notifications.clear(notificationId);
   })
 })
