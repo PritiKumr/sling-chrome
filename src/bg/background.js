@@ -38,10 +38,16 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.gcm.onMessage.addListener(function (message) {
   var opt = {
     type: "basic",
-    title: "New URL Received", 
+    title: "New Sling Shot!", 
     message: message.data['gcm.notification.url'],
-    iconUrl: "icons/icon128.png"
+    iconUrl: "icons/icon128.png",
+    isClickable: true,
+    requireInteraction: true
   };
   
   chrome.notifications.create(null, opt);
+
+  chrome.notifications.onClicked.addListener(function(){
+    chrome.tabs.create({ url: opt.message });
+  })
 })
