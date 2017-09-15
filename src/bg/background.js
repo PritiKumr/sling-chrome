@@ -38,7 +38,7 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.gcm.onMessage.addListener(function (message) {
   var opt = {
     type: "basic",
-    title: "New Sling Shot!", 
+    title: message.data['gcm.notification.title'], 
     message: message.data['gcm.notification.url'],
     iconUrl: "icons/icon128.png",
     isClickable: true,
